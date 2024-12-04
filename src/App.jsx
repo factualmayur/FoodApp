@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import SearchResults from "./components/SearchResults";
 import { FOOD_DATA } from "./server";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -98,8 +99,15 @@ const App = () => {
   ))}
 </section>
 
+<section>
+  {filteredData && filteredData.length === 0 ? (
+    <NotFound />
+  ) : (
+    <SearchResults data={filteredData || data} />
+  )}
+</section>
 
-      <SearchResults data={filteredData || data}/>
+      
     </div>
     </>
   );
