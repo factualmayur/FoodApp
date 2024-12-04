@@ -92,7 +92,8 @@ const App = () => {
   {FilterBtns?.map((value)=>(
     <button 
     onClick={()=>filterFood(value.type)}
-    className="w-[clamp(120px,20%,40px)] p-2 bg-red-600 rounded-lg text-sm lg:p-3"
+    style={{ backgroundColor: selectedBtn === value.type ? '#7f10a0' : 'red' }}
+    className="w-[clamp(120px,20%,40px)] p-2  rounded-lg  hover:scale-110 text-sm lg:p-3 transition-all"
     key={value.name}>{value.name}</button>
   ))}
 </section>
